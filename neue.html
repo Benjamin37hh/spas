@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coole Webseite :unschuldig:</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        padding: 50px;
+        height: 100vh;
+      }
+      #jumpscare {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        justify-content: center;
+        align-items: center;
+      }
+      #jumpscare img {
+        max-width: 100%;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Willkommen auf meiner coolen Webseite! :sonnenbrille:</h1>
+    <p>Klick irgendwo hin, um fortzufahren...</p>
+    <div id="jumpscare">
+      <img src="./6PU8.gif" alt="Jumpscare" />
+      <audio id="scream" preload="auto" loop>
+        <source src="./scary-scream-193752.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+    <script>
+      document.body.addEventListener("click", function () {
+        setTimeout(() => {
+          let jumpscare = document.getElementById("jumpscare");
+          jumpscare.style.display = "block";
+          let audio = document.getElementById("scream");
+          audio.play();
+        }, 3000); // 3 Sekunden Verzögerung nach dem Klick
+      });
+    </script>
+  </body>
+</html>
